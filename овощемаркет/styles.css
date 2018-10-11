@@ -1,0 +1,144 @@
+
+body header {width: 95vw;}
+body header h1 {text-align: center; font-size: 4vw;}
+body header h1::first-letter {color: red;}
+
+section {
+	display: none;
+}
+
+label(:not(:checked)) + section {
+	display: none;
+}
+
+label(:checked) + section {
+	display: block;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.image-group:target {
+	display: all;
+}
+
+.modalDialog > div {
+	width: 100vmin;
+	position: relative;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+.modalDialog > div img {margin: 10% 0;}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: fixed;
+	right: 50px;
+	text-align: center;
+	top: 50px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {background: darkgrey;}
+
+input {
+	position: fixed;
+	top: 60vh;
+	z-index: -1;
+	left: 45vw;
+}
+
+input#first-group-switch {}
+
+input#second-group-switch {transform: translateX(20px);} 
+
+input#third-group-switch {transform: translateX(40px);} 
+
+
+
+input:checked + section {
+	display: block;
+}
+
+main {
+	box-sizing: content-box;
+	height: 30vh;
+	width: 80vw;
+	top: 25vh;
+	position: absolute;
+	left: 7vw;
+}
+article.vegetable {
+	box-sizing: border-box;
+	width: 25%;
+	height: 100%;
+	float: left;
+	margin: 0;
+}
+
+figure {
+	box-sizing: content-box;
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+}
+
+figure figcaption.description {
+	display: none;
+	font-size: 0.9em;
+	font-family: 'Slabo 27px', serif;
+}
+figure figcaption p::first-letter {
+	font-weight: bold;
+}
+
+img.vegetable-photo {
+	width: 100%;
+	margin: 0 0 5%;
+}
+
+figure:hover {
+	padding: 1vw 1vw 0 1vw;
+	font-family: 'Slabo 27px', serif;
+	width: 125%;
+	background-color: white;
+	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, .2);
+	opacity: 0.99;
+}
+
+figure:hover figcaption {
+	display: inline;
+}
+
+footer {
+	font-size: 0.1em;
+	color: white;
+}

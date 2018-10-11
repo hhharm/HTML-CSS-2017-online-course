@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Бабушкины котятки</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<header><h1>Бабуленькины котятки</h1></header>
+	<main>
+		<nav>
+			<header>
+				<input type="radio" name="kind" id="allrad">			
+				<p>
+					<a href="#all" onclick="document.getElementById('allrad').checked = true;">
+						Все породы
+					</a>
+				</p>
+				<hr>				
+			</header>
+			<input type="radio" name="kind" id="abrad">
+			<p class="kind">
+				<a href="#abissinskaya" onclick="document.getElementById('abrad').checked = true;">
+					Абиссинская
+				</a>
+			</p>
+			<input type="radio" name="kind" id="brrad">
+			<p class="kind">
+				<a href="#britanskaya" onclick="document.getElementById('brrad').checked = true;">
+					Британская
+				</a>
+			</p>
+			<input type="radio" name="kind" id="rusgolrad">
+			<p class="kind">
+				<a href="#russkaya-golubaya" onclick="document.getElementById('rusgolrad').checked = true;">
+					Русская голубая
+				</a>
+			</p>
+			<input type="radio" name="kind" id="siamrad">
+			<p class="kind">
+				<a href="#siamskaya" onclick="document.getElementById('siamrad').checked = true;">
+					Сиамская
+				</a>
+			</p>
+		</nav>
+		<section class="gallery">
+			<div id="all"></div>
+			<div id="abissinskaya"></div>
+			<div id="britanskaya"></div>
+			<div id="russkaya-golubaya"></div>
+			<div id="siamskaya"></div>
+			<figure class="ab">
+				<img src="https://s-media-cache-ak0.pinimg.com/236x/c2/93/26/c293262b2762607f246428435da1b231.jpg" alt="Абиссинский котенок">
+				<figcaption>Анатолий, 3 месяца</figcaption>
+			</figure>
+			<figure class="rus-gol">
+				<img src="http://feo.ua/upload/news_fotos_thumb/onf_26216_1600_0.jpg" alt="Виноватый котенок">
+				<figcaption>Афоня, 1 год</figcaption>
+			</figure>
+			<figure class="br">
+				<img src="http://ic.pics.livejournal.com/miragerry/67030366/572019/572019_600.jpg" alt="Стыдящий котенок">
+				<figcaption>Акакий, 1.5 года</figcaption>
+			</figure>
+			<figure class="rus-gol">
+				<img src="http://i50.beon.ru/90/8/2490890/60/92931460/4sWzsv0ME.jpeg" alt="Дворовый котенок">
+				<figcaption>Вася, 3 года</figcaption>
+			</figure>
+			<figure class="siam">
+				<img src="http://michael.net.ru/img/121017/_DSC5929.jpg" alt="Тёмный котенок">
+				<figcaption>Ярость, 8 месяцев</figcaption>
+			</figure>
+			<figure class="ab">
+				<img src="http://img.desktopwallpapers.ru/animals/pics/wide/1920x1200/f625a0f98f7395bfc58a27effb800c63.jpg" alt="Любопытный котенок">
+				<figcaption>Поньк, 6 месяцев</figcaption>
+			</figure>
+			<figure class="siam">
+				<img src="https://img2.goodfon.ru/wallpaper/big/c/aa/koshka-kot-pushistyy-lezha-otdyh.jpg" alt="Вальяжный котенок">
+				<figcaption>Мявыч, 2 года</figcaption>
+			</figure>
+			<figure class="rus-gol">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsiQ8PTAuUdKfUFW5GdLZsNVEf3WPdN04MmQR2BvPS9TNC19Ng9A" alt="Умный котенок">
+				<figcaption>Павел, 29 месяцев</figcaption>
+			</figure>
+			<figure class="br">
+				<img src="http://www.scorp12on.narod.ru/images-3/wallpapers_cats_717.jpg" alt="Важный котенок">
+				<figcaption>Вова, 3 года</figcaption>
+			</figure>
+			<figure class="ab">
+				<img src="https://wallpaper.feodosia.net/media/_thumbs/wallpaper/animal/original_12154_oboi_zakutavshijsja_v_futbolku_kot_1920x1200.jpg.600x350_q85_crop.jpg" alt="'Хочу мур-мур' котенок">
+				<figcaption>Тоша, 2.1 год</figcaption>
+			</figure>
+			<figure class="rus-gol">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwfNtvISW2nU3AnQhjmMe_w9bN4kqjPP_YVBwFO8tMku7CaBk72A" alt="Ещё один дворовый котенок">
+				<figcaption>Юджин, 4 месяца</figcaption>
+			</figure>
+			<figure class="br">
+				<img src="http://apikabu.ru/img_n/2012-08_1/mmj.jpg" alt="Просто котенок">
+				<figcaption>Тося, 3 года</figcaption>
+			</figure>
+		</section>
+		<section class="cat-rate"> 
+			<h2>Рейтинг</h2>
+			<label for="rate-checkbox" class="checkbox-label">по убыванию</label>
+			<input type="checkbox" name="reverse" id="rate-checkbox" class="checkbox">
+			<section class="all-rates">				
+				<article id="rate1">
+					<h3>Абиссинская</h3>
+					<figure>
+						<div class="good-rate" id="abiss-rate"></div>
+						<figcaption>9</figcaption>
+					</figure>
+				</article>			
+				<article id="rate2">
+					<h3>Британская</h3>
+					<figure>
+						<div class="middle-rate" id="br-rate"></div>
+						<figcaption>8</figcaption>
+					</figure>
+				</article>		
+				<article id="rate3">
+					<h3>Русская голубая</h3>
+					<figure>
+						<div class="good-rate" id="russgol-rate"></div>
+						<figcaption>10</figcaption>
+					</figure>
+				</article>		
+				<article id="rate4">
+					<h3>Сиамская</h3>
+					<figure>
+						<div class="bad-rate" id="siam-rate"></div>
+						<figcaption>4</figcaption>
+					</figure>
+				</article>		
+			</section>
+
+		</section>
+	</main>
+	<footer>
+		<hr>
+		<section class="footer-content">
+			<span id="copiright">© ООО Бабуленькины котятки, <time datetime="01-01-2017T00:00">2017</span>
+				<address>Наш адрес: улица Котовая, д.5</address>
+			</section>
+		</footer>
+	</body>
+	</html>

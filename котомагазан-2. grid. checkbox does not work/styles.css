@@ -1,0 +1,227 @@
+/* change page background and remove unneeded indents */
+html, body{width:98vw; padding:0px; margin:0px; font-size: 0.95em;
+	box-sizing: border-box;}
+body {background-color: #ebebeb;}
+
+
+/* style main header */
+header h1 {text-align: center;}
+header h1::first-letter {color:red;}
+
+
+/* style main content, using flex */
+main {
+	padding: 0 1%;
+	width: 98%;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 15% 1fr 15%;
+}
+
+
+
+/* main: left sidebar */
+
+/* this is div's with empty content used to handle clicks on different cat's kind */
+#abissinskaya, #britanskaya, #russkaya-golubaya, #siamskaya, #all {position: fixed; top: 0; left: 0;}
+/* make transparent all photos expect selected kind */
+#abissinskaya:target ~ figure, 
+#britanskaya:target ~ figure,
+#russkaya-golubaya:target ~ figure,
+#siamskaya:target ~ figure  {	opacity: 0.5;}
+#all:target figure {opacity: 1;}
+
+nav a {	text-decoration: none;	color: black;}
+nav input[type="radio"] {display: none;}
+input[type="radio"]:checked + p.kind {background-color: grey;}
+input[type="radio"]:checked + p.kind a {color: white;}
+
+#abissinskaya:target ~ figure.ab {opacity: 1;}
+#britanskaya:target ~ figure.br {opacity: 1;}
+#russkaya-golubaya:target ~ figure.rus-gol {opacity: 1;}
+#siamskaya:target ~ figure.siam {opacity: 1;}
+
+
+nav {
+	margin: 0;
+	background: #d9d9d9;
+	overflow: hidden;
+	grid-column: 1;
+	padding: 0 1%;
+  /* linearly increase the font-size from 16->32px 
+     between a viewport width of 600px-> 1200px  */
+  @include fluid-type(font-size, 600px, 1200px, 0.8em, 1.3em);
+}
+@media screen and (max-width: 600px) {
+  nav, .cat-rate {
+     font-size: .8em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  nav, .cat-rate  {
+     font-size: 1.3em;
+  }
+}
+
+nav p {
+	box-sizing: content-box;
+	padding: 10% 5%;
+	margin: 0;
+	border-bottom: 1px solid grey;
+	text-overflow: clip;
+}
+
+
+/* main: center (photo's gallery) */
+
+section.gallery {
+	grid-column: 2;
+	display: inline-grid;
+	grid-gap: 10px;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.gallery figure figcaption {
+	position: absolute; 
+	bottom: 10%;
+	display: none;
+	color: white;
+	font-size: 1.2em;
+	background-color: grey;
+	opacity: 0.8;
+	padding: 15px;
+}
+.gallery figure:hover figcaption {display: inline;}
+.gallery figure {
+	align-self: end;
+	margin:0;
+	box-sizing:border-box;
+	position: relative;
+}
+.gallery figure img {width: 100%; opacity: inherit;}
+.gallery figure:nth-of-type(8n+1) {grid-column: 1;}
+.gallery figure:nth-of-type(8n+2) {grid-column: 2/4;}
+.gallery figure:nth-of-type(8n+3) {grid-column: 1;}
+.gallery figure:nth-of-type(8n+4) {grid-column: 2;}
+.gallery figure:nth-of-type(8n+5) {grid-column: 3;}
+.gallery figure:nth-of-type(8n+6) {grid-column: 1/3;}
+.gallery figure:nth-of-type(8n+7) {grid-column: 3;}
+.gallery figure:nth-of-type(8n) {grid-column: 1/4;}
+
+
+/* main: right bar (cat's rate) */
+
+section.cat-rate {
+	background: #d9d9d9;
+  /* linearly increase the font-size from 16->32px 
+     between a viewport width of 600px-> 1200px  */
+  @include fluid-type(font-size, 600px, 1200px, 0.8em, 1.3em);
+    grid-column: 3;
+	padding: 5%;
+	align-self: start;
+	display: grid;
+	grid-template-rows: 100%;
+	grid-template-columns: 80% 20%;
+}
+
+section.cat-rate section.all-rates {
+	grid-row: 3/7;
+	grid-column: 1/3;
+	grid-auto-flow: dense;
+}
+section.all-rates figure {
+	margin: auto 0;
+}
+section.cat-rate h2 {
+	grid-row: 1;
+	font-size: 120%;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	color: red;
+	font-weight: normal;
+}
+
+section.cat-rate .checkbox {
+	grid-row: 2;
+	grid-column: 2;
+}
+
+section.cat-rate .checkbox-label {
+	grid-row: 2;
+	grid-column: 1;
+}
+
+section.cat-rate article {
+	display: grid;
+	grid-template-columns: 80% 20%;
+}
+section.cat-rate article h3 {
+	grid-column: 1 / 3;
+	grid-row: 1;
+}
+section.cat-rate article figure {
+	grid-column: 1 / 3;
+	grid-row: 2;
+	display: inline-grid;
+	grid-template-columns: 80% 20%;
+}
+section.cat-rate article figure div {
+	grid-column: 1;
+	grid-row: 1;
+}
+section.cat-rate article figure figcaption {
+	grid-column: 2;
+	grid-row: 1;
+}
+/*10 = 80%*/
+div#abiss-rate {width: 72%; grid-row: 1; grid-column: 1;}
+div#siam-rate {width: 32%;  grid-row: 1; grid-column: 1;}
+div#br-rate {width: 64%; grid-row: 1; grid-column: 1;}
+div#russgol-rate {width: 80%;  grid-row: 1; grid-column: 1;}
+div.good-rate, div.bad-rate, div.middle-rate {
+	height: 20px;
+	display: inline-block;
+}
+div.good-rate {
+	background: #06e970; /* Для старых браузров */
+    background: linear-gradient(to right, #06e970, white);
+}
+div.bad-rate {
+	background: #e90c07;
+    background: linear-gradient(to right, #e90c07, white);
+}
+div.middle-rate {
+	background: #fff602;
+    background: linear-gradient(to right, #fff602, white);
+}
+section.cat-rate figure figcaption {
+	display: inline-block;
+	text-align: right; 
+	font-weight: bold;
+	margin: 0;
+	grid-column: 2;
+}
+
+input[type="checkbox"]:checked ~ .all-rates #rate1 {grid-row: 4;}
+#rate1 {grid-row: 1; }
+input[type="checkbox"]:checked ~ .all-rates #rate2 {grid-row: 3;}
+#rate2 {grid-row: 2;}
+input[type="checkbox"]:checked ~ .all-rates #rate3 {grid-row: 2;}
+#rate3 {grid-row: 3;}
+input[type="checkbox"]:checked ~ .all-rates #rate4 {grid-row: 1;}
+#rate4 {grid-row: 4;}
+
+/* page footer */
+
+body footer {
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0;
+}
+footer section.footer-content {
+	width: 90%;
+	margin-left: 5%;
+}
+footer address {color: blue; font-style: italic;}

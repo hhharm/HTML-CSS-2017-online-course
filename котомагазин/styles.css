@@ -1,0 +1,224 @@
+/*  Related to the header and footer of the whole page */
+
+body {margin: 0; padding: 0;}
+.myandex {color: orange;}
+
+h1#market-name {text-align: center;}
+
+footer {text-align: center;	font-style: italic;font-size: 1vw;}
+
+.offtop {font-size: 0.2em; color: grey;}
+
+/* table/list switch related */
+input[type="radio"] {
+    display:none;
+    margin: 0;
+}
+
+input[type="radio"] + label {
+    font-family:Arial, sans-serif;
+    font-size: 0.8em;
+    border: 1px solid green;
+    padding: 4px;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+
+input[type="radio"]:not(:checked)+label {
+	color: lightgrey;
+	border-color: lightgrey;
+}
+
+.switch-label {user-select: none;}
+
+/* item card related */
+
+section#all-blocks-container {
+	margin: 0px auto;
+}
+
+/*large window variant */
+/*#table:checked ~ */
+#table:checked ~ div.item {
+	vertical-align: top;
+	width: 300px;
+	max-width: 30vw;
+    height: auto;
+    max-height: 45vw;
+	padding: 1%;
+	display: inline-block;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	text-overflow: ellipsis; /* Многоточие */
+	margin: 1%;
+	border: 1px solid white;
+	box-shadow: 3px 3px white;
+    transition: all .5s ease-in-out; 
+}
+/*small window variant */
+#list:checked ~ div.item {
+	width: auto;
+    height: auto;
+    max-height: 45vw;
+	display: block;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	text-overflow: ellipsis; 
+	margin: 1% 0;
+	border: 1px solid white;
+	box-shadow: 3px 3px white;
+    transition: all .5s ease-in-out; 
+}
+
+div.item:hover {
+	border: 1px solid grey;
+    background: #dadada;
+	box-shadow: 3px 3px lightgrey;
+	overflow-y: auto;
+}
+div.item div.description {
+	overflow-y: auto;
+    height: auto;
+    max-height: 20vw;
+}
+img.item-image:hover {
+	border: 2px solid green;
+}
+
+.item-name:hover {
+	background-color: lightgray;
+}
+
+/*i could not imagine any effect, so...*/
+.item-category:hover {
+	 transform: scaleY(-1);
+}
+#table:checked ~ div.item img.item-image {
+	height: 10vw;
+	display: block;
+	margin: 0 auto;
+}
+#list:checked ~ div.item img.item-image {
+	width: 20vw;
+	display: inline-block;
+}
+
+#list:checked ~div.item div.item-common {
+	display: inline-block;
+	width: 20vw;
+	padding: 0 0 0 2vw;
+	vertical-align: top;
+}
+
+div.item div.item-common p.item-name {
+	white-space: nowrap; /* Отменяем перенос текста */
+	overflow: hidden; /* Обрезаем содержимое */
+	text-overflow: ellipsis; /* Многоточие */
+	margin: 0;
+	font-size: 2.3vw;
+}
+
+div.item .item-category {
+	white-space: nowrap; /* Отменяем перенос текста */
+	overflow: hidden; /* Обрезаем содержимое */
+	text-overflow: ellipsis; /* Многоточие */
+	margin: 0;	
+	font-size: 1.8vw;
+}
+
+div.item .item-category a {color: grey; font-size: 0.8em;}
+
+div.star-five {
+  position: relative;
+  display: inline-block;
+  width: 0px;
+  margin: 0;
+  height: 0px;
+  border-right: 0.7vw solid transparent;
+  border-bottom: .45vw solid yellow;
+  border-left: 0.7vw solid transparent;
+  -webkit-transform: rotate(37deg);
+  -moz-transform: rotate(37deg);
+  -ms-transform: rotate(37deg);
+  -o-transform: rotate(37deg);
+  transform: rotate(37deg); cursor: pointer;
+}
+
+div.star-five:before {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  top: -.25vw;
+  left: -.35vw;
+  content: "";
+  border-bottom: .4vw solid yellow;
+  border-left: .1vw solid transparent;
+  border-right: .15vw solid transparent;
+  -webkit-transform: rotate(323deg);
+  -moz-transform: rotate(323deg);
+  -ms-transform: rotate(323deg);
+  -o-transform: rotate(323deg);
+  transform: rotate(323deg); cursor: pointer;
+}
+
+
+div.star-five:after {
+  position: absolute;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  top: 0vw;
+  left: -.65vw;
+  content: "";
+  border-right: 0.7vw solid transparent;
+  border-bottom: .45vw solid yellow;
+  border-left: .7vw solid transparent;
+  -webkit-transform: rotate(286deg);
+  -moz-transform: rotate(286deg);
+  -ms-transform: rotate(286deg);
+  -o-transform: rotate(286deg);
+  transform: rotate(286deg);
+   cursor: pointer;
+}
+
+.item-score {margin: 0; cursor: pointer;}
+p.item-price {margin: 0.5vw 0;padding: 0;}
+span.item-price {
+	color: red;
+	font-weight: bold;
+	font-size: 1.8vw;
+	text-shadow: -1px 1px darkred;
+}
+
+.item-old-price {
+	text-decoration:line-through;
+	font-weight: bold;
+	font-size: 1.6vw;
+	margin: 0 1vw;
+	padding: 0;
+}
+
+h2.description-label {
+	font-size: 1.1em;
+	margin: 0;
+}
+
+.description {
+	font-size: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+}
+
+#list:checked ~div.item div.description {
+	max-width: 50vw;
+	display: inline-block;
+	vertical-align: top;
+	overflow-y: auto;
+}

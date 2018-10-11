@@ -1,0 +1,261 @@
+
+body {
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+/*header styles: magazine name*/
+.head-left {
+	/*font-size: medium;*/
+	width: 200px;
+	font-size: 1em;
+	display: inline-block;
+	border: 1px solid black;
+	padding: 2%;
+	margin: 2.5%;
+	vertical-align: top;
+	text-align: center;
+}
+.head-right {
+	font-size: 0.8em;
+	width: 	200px;
+	height: 7em;
+	padding-left: 3em; 
+	display: inline-block;
+	text-align: justify;
+}
+.magazine-name {
+	font-family: 'UnifrakturCook', cursive;
+	font-size: 5em;
+	width: auto;	
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+}
+.head-right h1 {
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 1px;
+}
+span.when {
+	font-weight: bold;
+	font-style: italic;
+}
+body header h2 {
+	font-size: 0.5em;
+	font-variant: normal;
+	font-style: normal;
+	font-weight: normal;
+}
+.header-hr {
+	padding:0; margin:0;
+}
+.header-hr.below { 
+    border: none;
+    background-color: black; 
+	height: 2px;
+	color: black;
+}
+/* status line right below magazine name*/
+div#magazine_id {
+	display: inline-block;
+	width: 14%;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 0.8em;
+}
+div#copiright {
+	display: inline-block;
+	width: 16%;
+	margin: 0;
+	padding: 0;
+	font-style: italic;
+	font-size: 0.7em;
+}
+div#date {
+	display: inline-block;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-weight: bold;
+	font-size:  0.8em;
+	padding-left: 5px;
+}
+div#price {
+	display: inline-block;
+	width: 18%;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	text-align: right;
+}
+/*news : common*/
+main {
+	margin: 0;
+	padding: 0;
+}
+
+main section {
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+/*news : left column*/
+section#left-column {
+	height: 1520px;
+	width: 200px;
+	padding: 1px;
+	display: inline-block;
+}
+
+#first-article header h1,
+#first-article header h2,
+#first-article header h3
+{
+	vertical-align: text-top;
+	text-align: center;
+}
+#first-article header h1 {
+	font-size: 200%;
+	font-family: 'Anton', sans-serif;
+
+}
+#first-article header h2
+{
+	font-size: 150%;
+	font-family: 'Exo', sans-serif;
+}
+#first-article header h3
+{
+	font-size: 100%;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+}
+
+hr.below-article-name {
+	column-span: all; 
+	align-self: center;
+    background-color: black; 
+	width: 60%;
+}
+article {
+	font-size: 1em;
+	text-align: justify;
+}
+article footer {
+	font-family: 'Aref Ruqaa', serif;
+	font-size:  0.8em;
+	font-style: italic;
+	text-align: center;
+	margin: 0;
+}
+
+article h1,
+article h2,
+article h3,
+article h4 {
+	text-align: center;
+	vertical-align: text-top;
+}
+
+/*news : right column*/
+section#right-column {
+	padding: 1px;
+	width: 200px;
+	height: 1520px;
+	display: inline-block;
+}
+section#right-column h1 {
+	font-weight: bold;
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 200%;
+	text-align: left;
+}
+section#right-column h2 {
+	font-weight: bold;
+	font-family: 'Overpass Mono', monospace;
+	font-size: 150%;
+}
+
+
+/*news : center column*/
+#main-photo {
+	margin:0;
+}
+section#center-column {
+	width: 780px;
+	padding: 1px;
+	height: 1520px;
+	display: inline-block;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+section#center-column h1 {
+	column-span: all; 
+	font-family: 'Abril Fatface', cursive;
+	font-size: 200%;
+	text-align: left;
+}
+section#center-column h1#main-photo-header {
+	font-size: 120%;
+	font-family: 'Overpass Mono', monospace;
+	font-weight: bold;
+	margin: 0;
+}
+section#center-column p#main-photo-description {
+	font-family: 'Overpass Mono', monospace;
+	font-size: 80%;
+	margin: 0;
+}
+section#center-column h2 {
+	font-size: 100%;
+	font-weight: bold;
+}
+hr.center-column {
+	column-span: all; 
+	width: 90%;
+    background-color: black; 
+	color: black;
+	box-shadow: 2px 2px 2px 2px black;
+}
+
+article#fourth-article,
+article#third-article {
+	vertical-align: text-top;
+	display: inline-block;
+	width: 45%;
+	margin: 0;
+	padding: 1%;
+	column-count: 2;
+}
+
+article#third-article {
+	border-right: 1px solid black;
+}
+
+.image-paragraph {
+    float: right;
+	display: inline;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	margin-right: 0;
+	margin-top: 0;
+	border-bottom: 1px solid black;
+}
+figcaption {
+	text-align: right;
+	font-style: italic;
+}
+
+q {
+	font-style: italic;
+	font-family: sans-serif;
+}
+q::before {
+	content: '«';
+}
+q::after {
+	content: '»';
+}
