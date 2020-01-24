@@ -3,6 +3,7 @@ body {
 	width: 1200px;
 	margin-right: auto;
 	margin-left: auto;
+	background-color: #fff;
 }
 /*header styles: magazine name*/
 .head-left {
@@ -183,6 +184,9 @@ section#right-column h2 {
 /*news : center column*/
 #main-photo {
 	margin:0;
+	height: 300px;
+	object-fit: cover;
+	overflow: hidden;
 }
 section#center-column {
 	width: 780px;
